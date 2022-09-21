@@ -21,6 +21,58 @@
     {name: "Popocatepetl", height: 5465, place: "Mexico"},
     {name: "Mont Blanc", height: 4808, place: "Italy/France"}
   ];
+  
+ const container = document.querySelector('#mountains');
+  const table = document.createElement('table');
+
+  container.appendChild(table);
+
+  
+  const tableRow = document.createElement('tr');
+  table.appendChild(tableRow);
+
+  const thName = document.createElement('th');
+  thName.textContent = 'Name';
+  const thHeight = document.createElement('th');
+  thHeight.textContent = 'Height';
+  const thPlace = document.createElement('th');
+  thPlace.textContent = 'Place';
+  
+  tableRow.appendChild(thName);
+  tableRow.appendChild(thHeight);
+  tableRow.appendChild(thPlace);
+
+  for (let i = 0; i < MOUNTAINS.length; i++) {
+    // const row = document.createElement('tr');
+
+    if(MOUNTAINS[i].name) {
+      const row = document.createElement('tr');
+      const tableData = document.createElement('td');
+      tableData.textContent = MOUNTAINS[i].name;
+      tableData.style.fontWeight = 'normal';
+      thName.appendChild(row);
+      row.appendChild(tableData);
+    }
+    if (MOUNTAINS[i].height) {
+      const row = document.createElement('tr');
+      const tableData = document.createElement('td');
+      tableData.textContent = MOUNTAINS[i].height;
+      tableData.style.fontWeight = 'normal';
+      thHeight.appendChild(row);
+      row.appendChild(tableData);
+    }
+    if(MOUNTAINS[i].place) {
+      const row = document.createElement('tr');
+      const tableData = document.createElement('td');
+      tableData.textContent = MOUNTAINS[i].place;
+      tableData.style.fontWeight = 'normal';
+      thPlace.appendChild(row);
+      row.appendChild(tableData);
+    }
+
+} 
+
+
 
    
     </script>
