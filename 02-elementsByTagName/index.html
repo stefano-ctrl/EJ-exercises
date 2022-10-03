@@ -14,15 +14,26 @@
 </p>
 
     <script>
-    /*function byTagName(node, string) {
+   function byTagName(node, tagName) {
     
-    const allElements = document.getElementsByTagName(node);
-    const arr = Array.from(allElements);
+      let arr = [];
+      tagName = node.nodeName.toLowerCase();
 
-
-
-
-    } */
+      if (node.nodeType == Node.ELEMENT_NODE) {
+          for (let child of node.childNodes) {
+              arr.push(child);
+              return arr; 
+          } 
+        }
+        else {
+              let para = document.querySelector('p');
+              para.textContent = 'I am an idiot';
+          }
+          
+          
+      }
+    
+   
 
     </script>
     
